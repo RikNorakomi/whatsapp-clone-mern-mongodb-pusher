@@ -1,3 +1,20 @@
+## WhatsApp clone using MERN stack. Frontend hosted via Firebase. Backend hosted on Heroku. Pusher for making MongoDB a RealTime database
+
+- BEM naming convention used in App.
+
+### Frontend
+
+- FrontEnd build with React.
+- firebase used for authentication & hosting
+
+### Backend
+
+- Backend build with NodeJs, Express.js, mongoDB
+- hosted on Heroku
+- Pusher used for real time database functionality
+
+============
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
