@@ -1,0 +1,63 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+
+  /* we want the sidebar take 35% of to full width
+     and the chat section 65% */
+  flex: 0.35;
+}
+
+.sidebar__header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  border-right: 1px solid lightgrey;
+}
+
+.sidebar__headerRight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 10vh;
+}
+
+.sidebar__headerRight > .MuiSvgIcon-root {
+  margin-right: 2vw;
+  font-size: 24px !important;
+}
+
+.sidebar__search {
+  display: flex;
+  align-items: center;
+  background-color: #f6f6f6;
+  height: 39px;
+  padding: 10px;
+}
+
+.sidebar__searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  height: 35px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.sidebar__searchContainer > .MuiSvgIcon-root {
+  color: grey;
+  padding: 10px;
+}
+
+.sidebar__searchContainer > input {
+  border: none;
+  margin-left: 10px;
+
+  /* Removes the ugly default outline when input field is selected */
+  outline-width: 0;
+}
+
+.sidebar__chats {
+  flex: 1;
+  background-color: white;
+  overflow: scroll;
+}

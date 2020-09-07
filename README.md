@@ -1,4 +1,4 @@
-## WhatsApp clone using MERN stack. Frontend hosted via Firebase. Backend hosted on Heroku. Pusher for making MongoDB a RealTime database
+## WhatsApp clone using MERN stack
 
 - BEM naming convention used in App.
 
@@ -6,6 +6,11 @@
 
 - FrontEnd build with React.
 - firebase used for authentication & hosting
+
+packages used:
+
+- npm install @material-ui/core
+- npm install @material-ui/icons
 
 ### Backend
 
