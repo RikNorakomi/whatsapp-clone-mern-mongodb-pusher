@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Chat.css";
 import { IconButton, Avatar } from "@material-ui/core";
 import MicIcon from "@material-ui/icons/Mic";
+import axios from "./axios";
 import {
   SearchOutlined,
   AttachFile,
   MoreVert,
   InsertEmoticon,
-  SettingsInputAntenna,
-  Mic,
 } from "@material-ui/icons";
-function Chat() {
+
+function Chat({ messages }) {
+  const [input, setInput] = useState("");
+  const sendMessage = async (e) => {
+    e.preventDefault();
+    setInput("");
+
+    await axios.post("/messages/new", {
+      message: input,
+      name: "DEMO APP",
+      timestamp: "Just now!",
+      received: false,
+    });
+  };
   return (
     <div className="chat">
       <div className="chat__header">
@@ -32,24 +44,17 @@ function Chat() {
           </IconButton>
         </div>
       </div>
+
       <div className="chat__body">
-        <p className="chat__message">
-          <span className="chat__name">Rik</span>
-          This is a message
-          <span className="chat__timestamp">{new Date().toUTCString()}</span>
-        </p>
-
-        <p className="chat__message chat__receiver">
-          <span className="chat__name">Rik</span>
-          This is a message
-          <span className="chat__timestamp">{new Date().toUTCString()}</span>
-        </p>
-
-        <p className="chat__message">
-          <span className="chat__name">Rik</span>
-          This is a message
-          <span className="chat__timestamp">{new Date().toUTCString()}</span>
-        </p>
+        {messages.map((message) => (
+          <p
+            className={`chat__message ${message.received && "chat__receiver"}`}
+          >
+            <span className="chat__name">{message.name}</span>
+            {message.message}
+            <span className="chat__timestamp">{message.timestamp}</span>
+          </p>
+        ))}
       </div>
 
       {/* Chat footer */}
@@ -57,11 +62,14 @@ function Chat() {
         <InsertEmoticon />
         <form>
           <input
-            onChange={(e) => SettingsInputAntenna(e.target.value)}
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
             placeholder="Type a message"
             type="text"
           />
-          <button type="submit">Send a message</button>
+          <button onClick={sendMessage} type="submit">
+            Send a message
+          </button>
           <MicIcon />
         </form>
       </div>

@@ -3,7 +3,6 @@ import "./Sidebar.css";
 import ChatIcon from "@material-ui/icons/Chat";
 import DonutLargeIcon from "@material-ui/icons/DonutLarge";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import { SearchOutlined } from "@material-ui/icons";
 import { IconButton, Avatar } from "@material-ui/core";
 import SidebarChat from "./SidebarChat";
